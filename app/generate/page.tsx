@@ -25,17 +25,13 @@ export default function GeneratePage() {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsGenerating(true)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsGenerating(true);
 
-    // Simulate API call delay
-    setTimeout(() => {
-      setIsGenerating(false)
-      // Store form data in session storage to use in results page
-      sessionStorage.setItem("postGeneratorData", JSON.stringify(formData))
-      router.push("/results")
-    }, 4000)
+    // Store form data in session storage to use in results page
+    sessionStorage.setItem("postGeneratorData", JSON.stringify(formData));
+    router.push("/results");
   }
 
   return (

@@ -1,16 +1,9 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 
 const axiosClient = (options: AxiosRequestConfig = {}): AxiosInstance => {
-    // const token: string | null = localStorage.getItem("token");
-    // if (token) {
-    //     options.headers = { 
-    //         ...options.headers, 
-    //         Authorization: `Bearer ${token}` 
-    //     };
-    // }
-
+    // No need for token handling for local API routes
     return axios.create({
-        baseURL: "http://localhost:8000/api/",
+        baseURL: "", // Empty base URL since we're using relative paths for local API routes
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",

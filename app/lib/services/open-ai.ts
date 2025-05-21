@@ -1,10 +1,7 @@
 import OpenAI from "openai";
-import appConfigs from "../configs.js";
-
-
+import appConfigs from "../configs";
 
 const openai = new OpenAI({ apiKey: appConfigs.OPEN_AI_API_KEY });
-
 
 const generatePost = async (topic: string, tone: string, postType: string) => {
     try{
@@ -19,4 +16,4 @@ const generatePost = async (topic: string, tone: string, postType: string) => {
     }
 }
 
-export default  generatePost;
+export default generatePost;

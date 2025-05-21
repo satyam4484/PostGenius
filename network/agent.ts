@@ -1,8 +1,7 @@
 import axiosClient from "./apiClient";
 
-
 export const generateContent = {
-    baseUrl: '/generate-content',
+    baseUrl: '/api/generate-content',
 
     async generateSamplePosts(topics: string, tone: string, postType: string) {
         const axiosInstance = axiosClient();
@@ -11,7 +10,7 @@ export const generateContent = {
             tone,
             postType
         }
-        const response = await axiosInstance.post(this.baseUrl,JSON.stringify(data))
+        const response = await axiosInstance.post(this.baseUrl, JSON.stringify(data))
         return response.data
     }
 }
